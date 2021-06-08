@@ -27,6 +27,7 @@
 }
 
 .banner {
+  margin-bottom: 50px;
   background-color: #151515;
   background-size: cover;
   background-position: center;
@@ -46,4 +47,11 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.checkout {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px grey;
 }
