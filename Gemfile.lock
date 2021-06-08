@@ -101,6 +101,8 @@ GEM
     mail (2.7.1)
       mini_mime (>= 0.1.1)
     marcel (1.0.1)
+    materialize-sass (1.0.0)
+      autoprefixer-rails (>= 6.0.3)
     method_source (1.0.0)
     mini_mime (1.1.0)
     mini_portile2 (2.5.3)
@@ -227,6 +229,7 @@ DEPENDENCIES
   font-awesome-sass
   jbuilder (~> 2.7)
   listen (~> 3.2)
+  materialize-sass (~> 1.0.0)
   pg (>= 0.18, < 2.0)
   pry-byebug
   pry-rails
