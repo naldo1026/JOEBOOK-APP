@@ -1,1 +1,6 @@
-<h1>wazzzzzup</h1>
+<div class="container">
+  <% @posts.each do |post| %>
+    <%= post.title %> <hr>
+    <%= post.story %>
+  <% end %>
+</div>
