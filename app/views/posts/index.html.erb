@@ -4,7 +4,7 @@
         <h1><%= post.title %></h1>
         <h5><%= post.store_name %> || Robert Nemeth || <%= post.position %></h5>
         <p><%= post.story %></p>
-        <%= link_to "Edit", edit_post_path(post), class: 'btn btn-primary' %><%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+        <%= link_to "Edit", edit_post_path(post), class: 'btn btn-primary' %><%= link_to "Show", post_path(post), class: "btn btn-info" %><%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
       </div>
     <% end %>
 </div>
