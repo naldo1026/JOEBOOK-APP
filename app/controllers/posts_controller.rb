@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show, :new, :create]
+  skip_before_action :authenticate_user!, only: [:index, :show, :new, :create, :edit]
 
   def index
     @posts = Post.all
@@ -17,22 +17,31 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
-      redirect_to post_path(@post)
+      redirect_to posts_path
     else
       render 'new'
     end
   end
 
   def edit
-  
+    @post = Post.find(params[:id])
   end
 
   def update
-  
+    @post = Post.find(params[:id])
+
+    if @post.update(params[post_params)
+      redirect_to posts_path
+    else
+      render 'edit'
+    end
   end
 
   def destroy
-  
+    @post = Post.find(params[:id])
+    @post.destroy
+
+    redirect_to posts_path
   end
 
   private
