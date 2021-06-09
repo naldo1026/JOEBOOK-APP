@@ -1,6 +1,9 @@
 <div class="container">
-  <% @posts.each do |post| %>
-    <%= post.title %> <hr>
-    <%= post.story %>
-  <% end %>
+    <% @posts.each do |post| %>
+      <div class="index-box-page">
+        <h1><%= post.title %></h1>
+        <h5><%= post.store_name %> || Robert Nemeth || <%= post.position %></h5>
+        <p><%= post.story %></p>
+      </div>
+    <% end %>
 </div>
