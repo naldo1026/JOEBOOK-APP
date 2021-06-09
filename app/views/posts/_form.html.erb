@@ -1,7 +1,9 @@
-<%= simple_form_for @post do |f| %>
-  <%= f.input :title %>
-  <%= f.input :position %>
-  <%= f.input :store_name %>
-  <%= f.input :story %>
-  <%= f.button :submit %>
-<% end %>
+<div class="form-box-page">
+  <%= simple_form_for @post do |f| %>
+    <%= f.input :title %>
+    <%= f.input :position %>
+    <%= f.input :store_name %>
+    <%= f.input :story %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  <% end %>
+</div>
