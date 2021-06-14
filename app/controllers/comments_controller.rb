@@ -1,9 +1,20 @@
 class CommentsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:create]
   def create
+    @comment = Comment.new(comment_params)
     @post = Post.find(params[:post_id])
-    @comment = @post.comments.create(comment_params)
-    redirect_to post_path(@post)
+    @comment.post = @post
+
+    @comment.user = current_user
+    
+    if @comment.save!
+      redirect_to post_path(@post)
+    end
+
+
+
+    # @comment.user = current_user[:id]
+    # @comment = @post.comments.user.create!(comment_params)
   end
 
   private

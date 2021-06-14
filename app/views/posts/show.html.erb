@@ -1,12 +1,13 @@
 <div class="container">
   <div class="index-box-page">
     <h1><%= @post.title %></h1>
-    <h5><%= @post.store_name %> || Robert Nemeth || <%= @post.position %></h5>
+    <h5><%= @post.store_name %> || <%= @post.user.first_name.capitalize %> <%= @post.user.last_name.capitalize %>(<strong>#<%= @post.user.joe_code %></strong>) || <%= @post.position %></h5>
     <p><%= @post.story %></p>
   </div>
 
   <div class="index-box-page">
     <% @post.comments.each do |comment| %>
+      <h5><%= comment.user.first_name.capitalize %></h5>
       <h6><%= time_ago_in_words(comment.created_at) %> ago</h6> 
       <h3><%= comment.body %></h3> <hr>
     <% end %>
