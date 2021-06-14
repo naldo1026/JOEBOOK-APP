@@ -16,7 +16,7 @@
 
 .footer-links a {
   color: white;
-  opacity: 0.15;
+  opacity: 6.15;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
@@ -28,4 +28,13 @@
 
 .footer .fa-heart {
   color: #D23333;
+}
+
+@media (min-width: 100px) and (max-width: 575px) {
+  .footer-copyright {
+    display: none;
+  }
+  .footer-links a {
+    margin-left: 13px;
+  }
 }
