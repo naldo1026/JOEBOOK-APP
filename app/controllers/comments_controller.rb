@@ -6,15 +6,10 @@ class CommentsController < ApplicationController
     @comment.post = @post
 
     @comment.user = current_user
-    
+
     if @comment.save!
       redirect_to post_path(@post)
     end
-
-
-
-    # @comment.user = current_user[:id]
-    # @comment = @post.comments.user.create!(comment_params)
   end
 
   private

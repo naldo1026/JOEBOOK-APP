@@ -4,17 +4,17 @@
     <h5><%= @post.store_name %> || <%= @post.user.first_name.capitalize %> <%= @post.user.last_name.capitalize %>(<strong>#<%= @post.user.joe_code %></strong>) || <%= @post.position %></h5>
     <p><%= @post.story %></p>
   </div>
-
-  <div class="index-box-page">
-    <% @post.comments.each do |comment| %>
-      <h5><%= comment.user.first_name.capitalize %></h5>
-      <h6><%= time_ago_in_words(comment.created_at) %> ago</h6> 
-      <h3><%= comment.body %></h3> <hr>
-    <% end %>
-  </div>
-
-  <%= simple_form_for [@post, @post.comments.build] do |f| %>
+  <%= simple_form_for [@post, Comment.new] do |f| %>
     <%= f.input :body, label: "Comment" %>
     <%= f.button :submit, class: "btn btn-primary" %>
   <% end %>
+  <h2 style="margin-top: 30px;"><strong>Comment Section</strong></h2>
+  <div class="index-box-page">
+    <% @post.comments.each do |comment| %>
+      <h5><%= comment.user.first_name.capitalize %> <%= comment.user.last_name.capitalize %> (<strong>#<%= comment.user.joe_code %>)</strong></h5>
+      <h6 style="font-weight: lighter;"><i>posted <%= time_ago_in_words(comment.created_at) %> ago</i></h6> 
+      <h4><%= comment.body %></h4> <hr>
+    <% end %>
+  </div>
+
 </div>
