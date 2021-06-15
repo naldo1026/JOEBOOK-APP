@@ -1,37 +1,32 @@
 // Specific CSS for your home-page
-.navbar-lewagon {
-  justify-content: space-between;
-  background-color: #212121;
-  box-shadow: 1px 1px white;
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
 
 .btn-flat {
-  color: white;
+  text-shadow: white 0px 0px 10px;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #1EDD88;
+  background: #F7C6DC;
   transition: background 0.3s ease;
 }
 
 .btn-flat:hover {
-  background: #1BCB7F;
-  color: white;
+  background: #F7C6DC;
+  opacity: 0.7;
+  text-shadow: white 0px 0px 10px;
 }
 
 .banner {
   margin-bottom: 50px;
   background-color: #212121;
+  height: 100vh;
+  padding: 200px 0px;
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+   background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url(thepic.jpg);
 }
 
 .banner h1 {
