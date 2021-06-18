@@ -1,7 +1,7 @@
 <div class="container">
   <div class="index-box-page">
     <h1><%= @post.title %></h1>
-    <h5><%= @post.store_name %> || <%= @post.user.first_name.capitalize %> <%= @post.user.last_name.capitalize %>(#<strong><%= @post.user.joe_code %></strong>) || <%= @post.position %></h5>
+    <h5 style="font-weight: lighter;"><i><%= @post.store_name %> || <%= @post.user.first_name.capitalize %> <%= @post.user.last_name.capitalize %>(#<strong><%= @post.user.joe_code %></strong>) || <%= @post.position %></i></h5>
     <p><%= @post.story %></p>
     
     <% if user_signed_in? %>
@@ -18,13 +18,18 @@
     <% end %>
   </div>
 
-  <h2 style="margin-top: 30px;"><strong>Comment Section</strong></h2>
-  <div class="index-box-page">
-    <% @post.comments.each do |comment| %>
-      <h5><%= comment.user.first_name.capitalize %> <%= comment.user.last_name.capitalize %> (<strong>#<%= comment.user.joe_code %>)</strong></h5>
-      <h6 style="font-weight: lighter;"><i>posted <%= time_ago_in_words(comment.created_at) %> ago</i></h6> 
-      <h4><%= comment.body %></h4> <hr>
-    <% end %>
-  </div>
-
+  <% if @post.comments.count == 0 %>
+    <div class="index-box-page">
+      <h3>Be the first to comment</h3>
+    </div>
+  <% else %>
+    <h2 style="margin-top: 30px;"><strong>Comment Section</strong></h2>
+    <div class="index-box-page">
+      <% @post.comments.each do |comment| %>
+        <h5><%= comment.user.first_name.capitalize %> <%= comment.user.last_name.capitalize %> (<strong>#<%= comment.user.joe_code %>)</strong></h5>
+        <h6 style="font-weight: lighter;"><i>posted <%= time_ago_in_words(comment.created_at) %> ago</i></h6> 
+        <h4><%= comment.body %></h4> <hr>
+      <% end %>
+    </div>
+  <% end %>
 </div>
