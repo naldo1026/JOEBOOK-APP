@@ -3,6 +3,11 @@
     <h1><%= @post.title %></h1>
     <h5><%= @post.store_name %> || <%= @post.user.first_name.capitalize %> <%= @post.user.last_name.capitalize %>(<strong>#<%= @post.user.joe_code %></strong>) || <%= @post.position %></h5>
     <p><%= @post.story %></p>
+
+    <% if @post.user_id == current_user.id %>
+      <%= link_to "Edit", edit_post_path(@post), class: 'btn btn-primary' %><%= link_to "Show", post_path(@post), class: "btn btn-info" %><%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+    <% end %>
+
   </div>
   <%= simple_form_for [@post, Comment.new] do |f| %>
     <%= f.input :body, label: "Comment" %>

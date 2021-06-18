@@ -1,10 +1,10 @@
 <div class="container">
+  <h1 style="margin-top:20px; font-weight: bold;">Post feed</h1>
   <% @posts.each do |post| %>
     <div class="index-box-page">
-      <h1><%= post.title %></h1>
+      <h2><%= post.title %></h2>
       <h5><%= post.store_name %> || <%= post.user.first_name.capitalize %> <%= post.user.last_name.capitalize %>(<strong>#<%= post.user.joe_code %></strong>) || <%= post.position %></h5>
       <p><%= truncate(post.story, :length => 250) %>  <%= link_to "see more", post_path(post) %></p>
-      <%= link_to "Edit", edit_post_path(post), class: 'btn btn-primary' %><%= link_to "Show", post_path(post), class: "btn btn-info" %><%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
     </div>
   <% end %>
 </div>
