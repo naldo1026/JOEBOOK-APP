@@ -88,6 +88,9 @@
 }
 
 .sign {
+  margin-left: 320px;
+  margin-top: 50px;
+  margin-bottom: -50px;
   width: 50%;
   height: 50%;
   background-image: radial-gradient(
@@ -95,7 +98,7 @@
     #6b1839,
     transparent
   );
-  transform: translate(-50%, -50%);
+  // transform: translate(-50%, -50%);
   letter-spacing: 2;
   left: 50%;
   top: 50%;
