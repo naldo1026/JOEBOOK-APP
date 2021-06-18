@@ -3,7 +3,7 @@
   <% @posts.each do |post| %>
     <div class="index-box-page">
       <h2><%= post.title %></h2>
-      <h5><%= post.store_name %> || <%= post.user.first_name.capitalize %> <%= post.user.last_name.capitalize %>(<strong>#<%= post.user.joe_code %></strong>) || <%= post.position %></h5>
+      <h5 style="font-weight: lighter;"><i><%= post.store_name %> || <%= post.user.first_name.capitalize %> <%= post.user.last_name.capitalize %>(<strong>#<%= post.user.joe_code %></strong>) || <%= post.position %></i></h5>
       <p><%= truncate(post.story, :length => 250) %>  <%= link_to "see more", post_path(post) %></p>
     </div>
   <% end %>
