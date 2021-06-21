@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
 
     @comment.user = current_user
 
-    if @comment.save!
+    if @comment.save
       redirect_to post_path(@post)
     end
   end
