@@ -58,15 +58,6 @@
   box-shadow: 0 0 20px #000;
 }
 
-.home-page-pic {
-  background-image: url(tower);
-  padding: 400px 0px 100px 0px;
-  margin-bottom: 20px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 10px;
-}
-
 .home-page-border {
   background-color: white;
   padding: 20px;
@@ -75,6 +66,20 @@
   border-radius: 10px;
   box-shadow: 0 0 20px #000;
 }
+
+.heloo {
+  width: 100%;
+}
+
+// .home-page-pic {
+//   background-image: url(tower);
+//   padding: 400px 0px 100px 0px;
+//   margin-bottom: 20px;
+//   background-size: cover;
+//   background-position: center;
+//   border-radius: 10px;
+// }
+
 
 @font-face {
   font-family: Clip;
