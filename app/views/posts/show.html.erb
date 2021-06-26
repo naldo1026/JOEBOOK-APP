@@ -27,8 +27,16 @@
     <div class="index-box-page">
       <% @post.comments.each do |comment| %>
         <h5><%= comment.user.first_name.capitalize %> <%= comment.user.last_name.capitalize %> (<strong>#<%= comment.user.joe_code %>)</strong></h5>
-        <h6 style="font-weight: lighter;"><i>posted <%= time_ago_in_words(comment.created_at) %> ago</i></h6> 
-        <h4><%= comment.body %></h4> <hr>
+        <h6 style="font-weight: lighter;"><i>posted <%= time_ago_in_words(comment.created_at) %> ago</i></h6>
+        <h4><%= comment.body %></h4>
+        
+        <% if comment.user.photo.attached? %>
+          <%= cl_image_tag comment.user.photo.key, height: 300, width: 400, crop: :fill %>
+        <% else %>
+          <img src="https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png" alt="">
+        <% end %>
+        
+        <hr>
       <% end %>
     </div>
   <% end %>
