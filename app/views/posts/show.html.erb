@@ -33,7 +33,14 @@
             <%= image_tag("https://cphimageprocessor-prod.azurewebsites.net/merchants/merchant-1e87e9ba-4bed-4dad-8f91-e586ea04c65e.png", class: "avatar") %>
           <% end %>
           <div class="name-margins">
-            <h5><%= comment.user.first_name.capitalize %> <%= comment.user.last_name.capitalize %> (<strong>#<%= comment.user.joe_code %>)</strong></h5>
+            <% if @post.user_id == comment.user_id %>
+              <div style="margin-top: -10px;">
+                <h5><%= comment.user.first_name.capitalize %> <%= comment.user.last_name.capitalize %> (<strong>#<%= comment.user.joe_code %>)</strong></h5>
+                <h6 style="font-weight: lighter; margin-bottom: -10px;"><i>Author of this post</i></h6>
+              </div>
+            <% else %>
+              <h5><%= comment.user.first_name.capitalize %> <%= comment.user.last_name.capitalize %> (<strong>#<%= comment.user.joe_code %>)</strong></h5>
+            <% end %>
           </div>
         </div>
 
