@@ -25,7 +25,7 @@
   <% else %>
     <h2 style="margin-top: 30px;"><strong>Comment Section</strong></h2>
     <div class="index-box-page">
-      <% @post.comments.each do |comment| %>
+      <% @post.comments.order("created_at DESC").each do |comment| %>
         <div class="name-boxes">
           <% if comment.user.photo.attached? %>
             <%= cl_image_tag comment.user.photo.key, crop: :fill, class: "avatar" %>
