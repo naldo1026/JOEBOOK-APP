@@ -30,7 +30,7 @@
           <% if comment.user.photo.attached? %>
             <%= cl_image_tag comment.user.photo.key, crop: :fill, class: "avatar" %>
           <% else %>
-            <%= image_tag("https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png", class: "avatar") %>
+            <%= image_tag("https://cphimageprocessor-prod.azurewebsites.net/merchants/merchant-1e87e9ba-4bed-4dad-8f91-e586ea04c65e.png", class: "avatar") %>
           <% end %>
           <div class="name-margins">
             <h5><%= comment.user.first_name.capitalize %> <%= comment.user.last_name.capitalize %> (<strong>#<%= comment.user.joe_code %>)</strong></h5>

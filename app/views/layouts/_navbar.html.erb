@@ -24,7 +24,7 @@
               <% if current_user.photo.attached? %>
                 <%= cl_image_tag current_user.photo.key, crop: :fill, class: 'avatar dropdown-toggle' %>
               <% else %>
-                <%= image_tag("https://www.outsellinc.com/wp-content/uploads/woocommerce-placeholder.png", class: 'avatar dropdown-toggle' ) %>
+                <%= image_tag("https://cphimageprocessor-prod.azurewebsites.net/merchants/merchant-1e87e9ba-4bed-4dad-8f91-e586ea04c65e.png", class: 'avatar dropdown-toggle' ) %>
               <% end %>
             <% end %>
           </div>
