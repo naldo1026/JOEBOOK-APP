@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-4">
+      <div class="form-login">
+        <%= simple_form_for @cover do |f| %>
+          <%= f.input :store_name %>
+          <%= f.input :date_of_shift %>
+          <%= f.input :time_of_shift %>
+          <%= f.input :descrption %>
+          <%= f.button :submit, class: "btn btn-primary" %>
+        <% end %>
+     </div>
+    </div>
+  </div>
+</div>

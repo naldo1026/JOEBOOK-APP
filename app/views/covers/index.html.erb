@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Covers</h1>
+
+  <% @covers.each do |cover| %>
+    <%= cover.store_name %> <br>
+    <%= cover.date_of_shift %> <br>
+    <%= cover.time_of_shift %> <br>
+    <%= cover.descrption %>
+    <hr>
+  <% end %>
+</div>
