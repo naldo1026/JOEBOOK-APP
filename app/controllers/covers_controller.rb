@@ -11,7 +11,10 @@ class CoversController < ApplicationController
   def accept
     Rails.logger.info "Accepted the shift #{current_user}"
 
-    @accepted_shift = current_user
+    cover = Cover.find(params[:id])
+    cover.user = current_user
+
+    cover.save!
     redirect_to covers_path
   end
 
