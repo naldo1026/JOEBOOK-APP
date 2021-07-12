@@ -5,7 +5,8 @@
     <%= cover.store_name %> <br>
     <%= cover.date_of_shift %> <br>
     <%= cover.time_of_shift %> <br>
-    <%= cover.descrption %>
+    <%= cover.descrption %> <br>
+    <%= link_to "Interested", cover_path(cover), class: 'btn btn-primary' %>
     <hr>
   <% end %>
 </div>

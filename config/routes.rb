@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
+  post "/covers/accept", to: "covers#accept"
+
+
   root to: 'pages#home'
   resources :posts do
     resources :comments

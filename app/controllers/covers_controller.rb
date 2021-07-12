@@ -1,7 +1,18 @@
 class CoversController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:index, :show, :new, :create, :accept, :edit, :update, :destroy]
   def index
     @covers = Cover.all
+  end
+
+  def show
+    @cover = Cover.find(params[:id])
+  end
+
+  def accept
+    Rails.logger.info "Accepted the shift #{current_user}"
+
+    @accepted_shift = current_user
+    redirect_to covers_path
   end
 
   def new
