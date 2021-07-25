@@ -7,11 +7,10 @@
     <%= cover.time_of_shift %> <br>
     <%= cover.descrption %> <br>
       
-    <%= link_to "Interested", cover_path(cover), class: 'btn btn-primary' %>
-    <br>
       <% if !cover.user.nil? %>
         <h6><%= cover.user.first_name %> <%= cover.user.last_name %> (<b>#<%= cover.user.joe_code %></b>)</h6>
       <% end %>
+    <%= link_to "Interested", cover_path(cover), class: 'btn btn-primary' %>
     <hr>
   <% end %>
 </div>

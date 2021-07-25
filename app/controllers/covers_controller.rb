@@ -24,6 +24,7 @@ class CoversController < ApplicationController
 
   def create
     @cover = Cover.create(cover_params)
+    @cover.user = current_user
 
     if @cover.save!
       redirect_to covers_path
