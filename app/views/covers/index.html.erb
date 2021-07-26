@@ -11,8 +11,11 @@
         <h6><%= cover.user.first_name %> <%= cover.user.last_name %> (<b>#<%= cover.user.joe_code %></b>)</h6>
       <% end %>
 
-    <%= link_to "Interested", cover_path(cover), class: 'btn btn-primary' %>
-    
+      <form action="covers/accept" method="POST">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="hidden" name="id" value="<%= cover.id %>"><br>
+        <input type="submit" value="Accept">
+      </form>
     <hr>
   <% end %>
 </div>
