@@ -1,7 +1,12 @@
+require 'json'
+require 'open-uri'
+
 class CoversController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :new, :create, :accept, :edit, :update, :destroy]
+  
   def index
     @covers = Cover.all.order("created_at DESC")
+    api_call
   end
 
   def show
@@ -28,6 +33,12 @@ class CoversController < ApplicationController
     if @cover.save!
       redirect_to covers_path
     end
+  end
+
+  def api_call
+    url = 'https://api.openweathermap.org/data/2.5/find?q=London&appid=7efc92b2ae4bb1661fc8a2484fe6b06a'
+    user_serialized = URI.open(url).read
+    opened_api = JSON.parse(user_serialized)
   end
 
   private
