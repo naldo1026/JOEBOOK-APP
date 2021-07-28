@@ -36,7 +36,7 @@ class CoversController < ApplicationController
   end
 
   def api_call
-    url = 'https://api.openweathermap.org/data/2.5/find?q=London&appid=7efc92b2ae4bb1661fc8a2484fe6b06a'
+    url = 'https://api.openweathermap.org/data/2.5/find?q=London&appid='
     user_serialized = URI.open(url).read
     opened_api = JSON.parse(user_serialized)
   end
