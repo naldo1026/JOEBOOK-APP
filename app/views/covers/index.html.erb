@@ -1,21 +1,23 @@
 <div class="container">
   <h1>Covers</h1>
+    <div class="index-box-page">
+      <% @covers.each do |cover| %>
+        <%= cover.store_name %> <br>
+        <%= cover.date_of_shift %> <br>
+        <%= cover.time_of_shift %> <br>
+        <%= cover.descrption %> <br>
+          
 
-  <% @covers.each do |cover| %>
-    <%= cover.store_name %> <br>
-    <%= cover.date_of_shift %> <br>
-    <%= cover.time_of_shift %> <br>
-    <%= cover.descrption %> <br>
-      
-      <% if !cover.user.nil? %>
-        <h6><%= cover.user.first_name %> <%= cover.user.last_name %> (<b>#<%= cover.user.joe_code %></b>)</h6>
+          <form action="covers/accept" method="POST">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <input type="hidden" name="id" value="<%= cover.id %>">
+            <input class="btn btn-primary" type="submit" value="Accept">
+          </form>
+
+          <% if !cover.user.nil? %>
+            <h6><%= cover.user.first_name %> <%= cover.user.last_name %> (<b>#<%= cover.user.joe_code %></b>)</h6>
+          <% end %>
+        <hr>
       <% end %>
-
-      <form action="covers/accept" method="POST">
-        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-        <input type="hidden" name="id" value="<%= cover.id %>"><br>
-        <input type="submit" value="Accept">
-      </form>
-    <hr>
-  <% end %>
+    </div>
 </div>

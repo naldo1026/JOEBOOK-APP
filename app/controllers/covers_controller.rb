@@ -1,7 +1,7 @@
 class CoversController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :new, :create, :accept, :edit, :update, :destroy]
   def index
-    @covers = Cover.all
+    @covers = Cover.all.order("created_at DESC")
   end
 
   def show
